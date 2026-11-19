@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taskboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">▦ Taskboard</div>
+  <select id="boardSelect" aria-label="Board"></select>
+  <button id="newBoardBtn">+ Board</button>
+  <button id="renameBoardBtn" title="Rename board (owner)">Rename</button>
+  <button id="deleteBoardBtn" title="Delete board (owner)">Delete</button>
+  <input id="search" type="search" placeholder="Search cards…" aria-label="Search cards">
+  <span class="spacer"></span>
+  <button id="membersBtn">Members</button>
+  <span id="roleBadge" class="badge"></span>
+  <label class="asUser">Viewing as
+    <select id="userSelect" aria-label="Current user"></select>
+  </label>
+</header>
+
+<main id="board" class="board"></main>
+<div id="toast" class="toast" role="status"></div>
+
+<dialog id="cardDlg">
+  <form method="dialog" id="cardForm">
+    <h3>Card</h3>
+    <label>Title <input name="title" required maxlength="120"></label>
+    <label>Description <textarea name="desc" rows="4"></textarea></label>
+    <div class="row">
+      <label>Label
+        <select name="label">
+          <option value="">None</option><option>red</option><option>orange</option>
+          <option>green</option><option>blue</option><option>purple</option>
+        </select>
+      </label>
+      <label>Due date <input type="date" name="due"></label>
+      <label>Assignee <select name="assignee"></select></label>
+    </div>
+    <div class="actions">
+      <button type="button" id="deleteCardBtn" class="danger">Delete</button>
+      <span class="spacer"></span>
+      <button type="button" id="cancelCardBtn">Cancel</button>
+      <button type="submit" id="saveCardBtn" class="primary">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="membersDlg">
+  <h3>Board members</h3>
+  <div id="membersList"></div>
+  <div id="addMemberBox">
+    <h4>Add member</h4>
+    <div class="row">
+      <input id="newMemberName" placeholder="Name (new or existing)">
+      <select id="newMemberRole"><option>member</option><option>viewer</option><option>owner</option></select>
+      <button id="addMemberBtn" class="primary">Add</button>
+    </div>
+  </div>
+  <div class="actions"><span class="spacer"></span><button id="closeMembersBtn">Close</button></div>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
