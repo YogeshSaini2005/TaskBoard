@@ -2,7 +2,7 @@
 
 Boards → lists → cards, drag-and-drop (within and between lists), persistent data, and **role-based access** (owner / member / viewer) as the bonus feature.
 
-**Live:** _add your URL_ · **Stack:** vanilla HTML/CSS/JS, no build step, no dependencies.
+**Live:** https://taskboard-omega-rouge.vercel.app  · **Stack:** vanilla HTML/CSS/JS, no build step, no dependencies.
 
 ## Features
 - Multiple boards; lists and cards can be created, renamed, edited, deleted
